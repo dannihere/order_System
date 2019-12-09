@@ -1,0 +1,26 @@
+spring:
+    security:
+        user:
+            name: root
+            password: 123456
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        username: root
+        password: Fengzi1.
+        url: jdbc:mysql://144.202.101.25/sell?characterEncoding=utf-8&useSSL=false
+    jpa:
+        show-sql: true
+    jackson:
+        default-property-inclusion: non_null
+        #不返回值为null的属性
+        #可给属性赋初始值返回
+logging:
+    level:
+        org:
+            springframework:
+                boot:
+                    autoconfigure: ERROR
+server:
+    servlet:
+        context-path: /sell
+    port: 8090
