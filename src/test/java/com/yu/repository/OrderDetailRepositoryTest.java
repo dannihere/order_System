@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 import static org.junit.Assert.*;
 
 
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class OrderDetailRepositoryTest {
@@ -22,8 +21,8 @@ public class OrderDetailRepositoryTest {
     private OrderDetailRepository repository;
 
     @Test
-    public void saveTest(){
-        OrderDetail orderDetail=new OrderDetail();
+    public void saveTest() {
+        OrderDetail orderDetail = new OrderDetail();
         orderDetail.setDetailId("12313");
         orderDetail.setOrderId("1111");
         orderDetail.setProductIcon("http://a.jpg");
@@ -32,12 +31,12 @@ public class OrderDetailRepositoryTest {
         orderDetail.setProductPrice(new BigDecimal(2.3));
         orderDetail.setProductQuantity(2);
 
-        OrderDetail result=repository.save(orderDetail);
+        OrderDetail result = repository.save(orderDetail);
         Assert.assertNotNull(result);
     }
 
     @Test
-    public void findByOrderId(){
+    public void findByOrderId() {
 
     }
 

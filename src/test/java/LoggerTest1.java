@@ -15,10 +15,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class LoggerTest1 {
 
     @Test
-    public void test1(){
-        String name="didi";
-        String password="123456";
+    public void test1() {
+        String name = "didi";
+        String password = "123456";
         log.debug("debug...");
-        log.info("name:{},password:{}",name,password);
+        log.info("name:{},password:{}", name, password);
     }
 }

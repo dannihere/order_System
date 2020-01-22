@@ -36,6 +36,7 @@ public class BuyerOrderController {
 
     @Autowired
     private BuyerService buyerService;
+
     //创建订单
     @PostMapping("/create")
     public ResultVO<Map<String, String>> create(@Valid OrderForm orderForm,
@@ -77,8 +78,8 @@ public class BuyerOrderController {
     //订单详情
     @GetMapping("/detail")
     public ResultVO<OrderDTO> detail(@RequestParam("openid") String openid,
-                                     @RequestParam("orderid") String orderId){
-        OrderDTO orderDTO=buyerService.findOrderOne(openid,orderId);
+                                     @RequestParam("orderid") String orderId) {
+        OrderDTO orderDTO = buyerService.findOrderOne(openid, orderId);
         return ResultVOUtil.success(orderDTO);
 
     }
@@ -86,8 +87,8 @@ public class BuyerOrderController {
     //取消订单
     @PostMapping("/cancel")
     public ResultVO cancel(@RequestParam("openid") String openid,
-                           @RequestParam("orderid") String orderId){
-        buyerService.cancelOrder(openid,orderId);
+                           @RequestParam("orderid") String orderId) {
+        buyerService.cancelOrder(openid, orderId);
         return ResultVOUtil.success();
     }
 

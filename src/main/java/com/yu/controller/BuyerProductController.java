@@ -31,32 +31,33 @@ public class BuyerProductController {
 
 
     @GetMapping("/list")
-    public ResultVO list(){
+    public ResultVO list() {
         /*1.查询所有上架商品*/
-        List<ProductInfo> productInfoList=  productService.findUpAll();
+        List<ProductInfo> productInfoList = productService.findUpAll();
         /*2.查询类目*/
 
 
         /*精简方法，java8,lambda*/
-        List<Integer> categoryTypeList= productInfoList.stream().map(e -> e.getCategoryType()).collect(Collectors.toList());
-        List<ProductCategory> productCategoryList=categoryService.findByCategoryTypeIn(categoryTypeList);
+        List<Integer> categoryTypeList = productInfoList.stream()
+                .map(e -> e.getCategoryType())
+                .collect(Collectors.toList());
+        List<ProductCategory> productCategoryList = categoryService.findByCategoryTypeIn(categoryTypeList);
 
 
         //3.数据拼装
-        List<ProductVO> productVOList=new ArrayList<>();
-        for(ProductCategory productCategory:productCategoryList){
-            ProductVO productVO=new ProductVO();
+        List<ProductVO> productVOList = new ArrayList<>();
+        for (ProductCategory productCategory : productCategoryList) {
+            ProductVO productVO = new ProductVO();
             productVO.setCategoryName(productCategory.getCategoryName());
             productVO.setCaegoryType(productCategory.getCategoryType());
 
 
-
-            List<ProductInfoVO> productInfoVOList=new ArrayList<>();
-            for (ProductInfo productInfo:productInfoList){
-                if(productInfo.getCategoryType().equals(productCategory.getCategoryType())){
-                    ProductInfoVO productInfoVO=new ProductInfoVO();
-                   /*beanUtils直接copy值*/
-                    BeanUtils.copyProperties(productInfo,productInfoVO);
+            List<ProductInfoVO> productInfoVOList = new ArrayList<>();
+            for (ProductInfo productInfo : productInfoList) {
+                if (productInfo.getCategoryType().equals(productCategory.getCategoryType())) {
+                    ProductInfoVO productInfoVO = new ProductInfoVO();
+                    /*beanUtils直接copy值*/
+                    BeanUtils.copyProperties(productInfo, productInfoVO);
                     productInfoVOList.add(productInfoVO);
                 }
 

@@ -10,6 +10,6 @@ import java.util.Date;
 public class Date2LongSerializer extends JsonSerializer<Date> {
     @Override
     public void serialize(Date date, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
-        jsonGenerator.writeNumber(date.getTime()/1000);
+        jsonGenerator.writeNumber(date.getTime() / 1000);
     }
 }

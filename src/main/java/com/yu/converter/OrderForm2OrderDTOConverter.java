@@ -15,6 +15,8 @@ import java.util.List;
 @Slf4j
 public class OrderForm2OrderDTOConverter {
 
+    //json转成list
+
     public static OrderDTO convert(OrderForm orderForm) {
 
         Gson gson = new Gson();

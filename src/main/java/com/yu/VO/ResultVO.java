@@ -4,9 +4,9 @@ package com.yu.VO;
 import lombok.Data;
 
 /*
-* http请求返回的最外层对象
-*
-* */
+ * http请求返回的最外层对象
+ *
+ * */
 @Data
 public class ResultVO<T> {
 

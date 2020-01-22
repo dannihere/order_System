@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 @DynamicUpdate
@@ -24,8 +25,11 @@ public class ProductCategory {
     /*类目编号*/
     private Integer categoryType;
 
-    /*构造方法*/
+    private Date createTime;
+    private Date updateTime;
 
+
+    /*构造方法*/
     public ProductCategory() {
     }
 

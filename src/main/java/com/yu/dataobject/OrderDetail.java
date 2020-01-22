@@ -21,7 +21,7 @@ public class OrderDetail {
     private String orderId;
 
     /*商品id*/
-    private  String productId;
+    private String productId;
 
     /*商品名称*/
     private String productName;
@@ -40,7 +40,6 @@ public class OrderDetail {
 
     /*更新时间*/
     private Date updateTime;
-
 
 
 }

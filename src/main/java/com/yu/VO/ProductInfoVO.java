@@ -20,7 +20,7 @@ public class ProductInfoVO {
     @JsonProperty("description")
     private String productDescription;
 
-    @JsonProperty("Icon")
+    @JsonProperty("icon")
     private String productIcon;
 
 }

@@ -14,7 +14,7 @@ public class OrderForm {
     private String name;
 
     /**
-     *手机号必填
+     * 手机号必填
      */
     @NotEmpty(message = "手机必填")
     private String phone;
@@ -36,12 +36,6 @@ public class OrderForm {
      */
     @NotEmpty(message = "购物车不能为空")
     private String items;
-
-
-
-
-
-
 
 
 }

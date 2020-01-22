@@ -14,34 +14,34 @@ import java.util.List;
 
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = SellApplication.class )
+@SpringBootTest(classes = SellApplication.class)
 public class CategoryServiceImplTest {
 
     @Autowired
     private CategoryServiceImpl categoryService;
 
     @Test
-    public void findOne(){
-        ProductCategory productCategory=categoryService.findOne(1);
-        Assert.assertEquals(new Integer(1),productCategory.getCategoryId());
+    public void findOne() {
+        ProductCategory productCategory = categoryService.findOne(1);
+        Assert.assertEquals(new Integer(1), productCategory.getCategoryId());
     }
 
     @Test
     public void findAll() {
         List<ProductCategory> productCategoryList = categoryService.findAll();
-        Assert.assertNotEquals(0,productCategoryList.size());
+        Assert.assertNotEquals(0, productCategoryList.size());
     }
 
     @Test
     public void findByCategoryTypeIn() {
-        List<ProductCategory> productCategoryList=categoryService.findByCategoryTypeIn(Arrays.asList(1,2,3,4));
-        Assert.assertNotEquals(0,productCategoryList.size());
+        List<ProductCategory> productCategoryList = categoryService.findByCategoryTypeIn(Arrays.asList(1, 2, 3, 4));
+        Assert.assertNotEquals(0, productCategoryList.size());
     }
 
     @Test
     public void save() {
-        ProductCategory productCategory=new ProductCategory("老年人热门",6);
-        ProductCategory result=categoryService.save(productCategory);
+        ProductCategory productCategory = new ProductCategory("老年人热门", 6);
+        ProductCategory result = categoryService.save(productCategory);
         Assert.assertNotNull(result);
     }
 }
